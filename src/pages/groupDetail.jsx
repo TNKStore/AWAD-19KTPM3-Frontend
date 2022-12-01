@@ -38,7 +38,7 @@ export default function GroupDetail() {
     };
 
     const response = await axios
-      .get(`${process.env.REACT_APP_DOMAIN}/group/${groupID}`, { headers })
+      .get(`${process.env.REACT_APP_URL}/group/${groupID}`, { headers })
       .catch((error) => console.error("There was an error!", error));
 
     if (response.status === 200) {
@@ -56,7 +56,7 @@ export default function GroupDetail() {
 
     const response = await axios
       .get(
-        `${process.env.REACT_APP_DOMAIN}/group/invitation-link?group=${groupID}`,
+        `${process.env.REACT_APP_URL}/group/invitation-link?group=${groupID}`,
         {
           headers
         }
@@ -92,7 +92,7 @@ export default function GroupDetail() {
     };
 
     const response = await axios
-      .post(`${process.env.REACT_APP_DOMAIN}/group/invite/send`, data, {
+      .post(`${process.env.REACT_APP_URL}/group/invite/send`, data, {
         headers
       })
       .catch((error) => console.error("There was an error!", error));
@@ -117,7 +117,7 @@ export default function GroupDetail() {
     };
 
     const response = await axios
-      .post(`${process.env.REACT_APP_DOMAIN}/member/kick`, data, {
+      .post(`${process.env.REACT_APP_URL}/member/kick`, data, {
         headers
       })
       .catch((error) => console.error("There was an error!", error));

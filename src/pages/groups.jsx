@@ -33,7 +33,7 @@ export default function Groups() {
     };
 
     const response = await axios
-      .get(`${process.env.REACT_APP_DOMAIN}/group/list`, { headers })
+      .get(`${process.env.REACT_APP_URL}/group/list`, { headers })
       .catch((error) => console.error("There was an error!", error));
 
     if (response.status === 200) {
@@ -56,7 +56,7 @@ export default function Groups() {
     };
 
     const response = await axios
-      .post(`${process.env.REACT_APP_DOMAIN}/group/create`, data, { headers })
+      .post(`${process.env.REACT_APP_URL}/group/create`, data, { headers })
       .catch((error) => console.error("There was an error!", error));
 
     if (response.status === 200) {
